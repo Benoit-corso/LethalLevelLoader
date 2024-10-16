@@ -100,7 +100,7 @@ namespace LethalLevelLoader
 
             for (int i = 0; i < levelNames.Length; i++)
                 foreach (ExtendedLevel extendedLevel in PatchedContent.ExtendedLevels)
-                    if (levelNames[i].SomeText == extendedLevel.name)
+                    if (levelNames[i].SomeText == extendedLevel.name && !syncedLevelCurrentWeathers.ContainsKey(extendedLevel))
                         syncedLevelCurrentWeathers.Add(extendedLevel, weatherTypes[i]);
 
             foreach (KeyValuePair<ExtendedLevel, LevelWeatherType> syncedWeather in syncedLevelCurrentWeathers)
